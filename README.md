@@ -1,6 +1,6 @@
 # Monitoring
 
-##Introduction**
+## Introduction
 
 We will setup telegraf to collect metrics of Kubernetes and storage on the influxdb
 Assuming we have a influxdb address :  
@@ -10,7 +10,7 @@ User: admin
 Password: admin
 
 
-##Configuration
+## Configuration
 
 ```
 [[inputs.kube_inventory]]
@@ -25,22 +25,22 @@ Password: admin
 
 ```
 
-##Deploy on Kubernetes
+## Deploy on Kubernetes
 
-###Define a cluster role using RBAC authorization of Kubernetes  
+### Define a cluster role using RBAC authorization of Kubernetes  
 kubectl apply -f telegraf-clusterRole.yaml
 
-###Create a serviceaccount
+### Create a serviceaccount
 kubectl create serviceaccount telegraf
 
-###And then binding above clusterRole for telegraf serviceaccount:
+### And then binding above clusterRole for telegraf serviceaccount:
 kubectl apply -f telegraf-clusterRoleBinding.yaml
 
-###Create secret 
+### Create secret 
 kubectl apply -f telegraf-secret.yaml
 
-###Create configmap
+### Create configmap
 kubectl apply -f telegraf-configmap.yaml
 
-###Deploy telegraf
+### Deploy telegraf
 kubectl apply -f telegraf-deployment.yaml
