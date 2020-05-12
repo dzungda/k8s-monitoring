@@ -38,7 +38,7 @@ kubectl apply -f grafana-datasource-config.yaml
 kubectl apply -f grafana-deployment.yaml
 
 ```
-This is configuration will get metrics from prometheus in /etc/grafana/provisioning/datasources/prometheus.yaml in Grafana container  
+This is configuration will get metrics from prometheus in `/etc/grafana/provisioning/datasources/prometheus.yaml` in Grafana container  
  
  
 ```
