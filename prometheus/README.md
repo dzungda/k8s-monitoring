@@ -5,15 +5,17 @@
 
 
 ## Apply all kube-state-metrics manifest 
+```hcl
 kubectl apply -f kube-state-metrics/
+```
 
 
-
-## Apply prometheus 
+## Apply prometheus
+```hcl
 kubectl apply -f prometheus-service.yaml
 kubectl apply -f configmap-prometheus.yaml
 kubectl apply -f prometheus-deployment.yaml
-
+```
 
 
 ### This is configuration allowed prometheus get metrics
@@ -30,12 +32,12 @@ kubectl apply -f prometheus-deployment.yaml
 
 
 ## Apply grafana to display metrics from prometheus
-
+```hcl
 kubectl apply -f grafana-service.yaml
 kubectl apply -f grafana-datasource-config.yaml
 kubectl apply -f grafana-deployment.yaml
 
-
+```
 This is configuration will get metrics from prometheus in /etc/grafana/provisioning/datasources/prometheus.yaml in Grafana container  
  
  
